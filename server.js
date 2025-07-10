@@ -1,23 +1,29 @@
 const express = require('express');
+const path = require('path');
 const app = express();
-<<<<<<< HEAD
+require('dotenv').config();
+
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  res.send('¡Servidor funcionando correctamente!');
-=======
-const pool = require('./DB/db');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
-app.get('/', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT NOW()');
-    res.send(`¡Servidor funcionando correctamente! Hora de la base de datos: ${result.rows[0].now}`);
-  } catch (err) {
-    res.status(500).send('Error conectando a la base de datos');
-  }
->>>>>>> ececf28 (Proyecto Auth-app funcionando y conectado a PostgreSQL)
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'register.html'));
+});
+
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Servidor escuchando en el puerto ${PORT}`);
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
+

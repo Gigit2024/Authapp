@@ -1,32 +1,17 @@
 {
   "name": "auth-app",
   "version": "1.0.0",
-  "description": "",
-<<<<<<< HEAD
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-=======
   "main": "server.js",
-  "scripts":  {    
+  "scripts": {
     "dev": "nodemon server.js"
->>>>>>> ececf28 (Proyecto Auth-app funcionando y conectado a PostgreSQL)
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^3.0.2",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.0.1",
     "ejs": "^3.1.10",
-<<<<<<< HEAD
-    "express": "^5.1.0",
-=======
     "express": "^4.18.2",
->>>>>>> ececf28 (Proyecto Auth-app funcionando y conectado a PostgreSQL)
-    "jsonwebtoken": "^9.0.2",
-    "pg": "^8.16.3"
+    "pg": "^8.11.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
